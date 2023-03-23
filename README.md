@@ -1,6 +1,21 @@
 # video-price-comparison
 
+## Project Solution
+
+Because of unreliable of GET VIDEOS API, server will store the value in cache which use node-cache, and data in cache will update interval every 100 minutes, may be shorter in real project. And if any problem with the VIDEOS API, server will get data from cache.
+
+In real project, it is more safety if we use Redis or any database use for cache to store cache data.
+
+## TOTAL WORK HOUR
+
+1. Understand requirement, come up with solution: 2 hours
+2. Implement back end: 2 hours
+3. Implement front end: 1.5 hours
+
+TOTAL WORK: 5.5 hours
+
 ## APPLICATION SETUP
+
 1. Back end package install
    
    ```
