@@ -2,7 +2,7 @@ const axios = require("axios");
 const axiosInstance = axios.create({
   baseURL: "https://challenge.lexicondigital.com.au/api/v2/",
   timeout: 10000,
-  headers: { "x-api-key": "Yr2636E6BTD3UCdleMkf7UEdqKnd9n361TQL9An7" },
+  headers: { "x-api-key": process.env.API_KEY },
 });
 
 const Service = {

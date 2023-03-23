@@ -11,13 +11,13 @@ const Video = ({ video = {} }) => {
           <Card.Text>
             <Row>
               <Col md={6} >CinemaWorld</Col>
-              <Col md={6} className={ video.cinemaWorldPrice < video.filmWorldPrice ? styles.hightPrice : ""  }>{video.cinemaWorldPrice}$</Col>
+              <Col md={6} className={ video.cinemaWorldPrice < video.filmWorldPrice ? styles.hightPrice : ""  }>${video.cinemaWorldPrice}</Col>
             </Row>
           </Card.Text>
           <Card.Text>
             <Row>
               <Col md={6}>Filmworld</Col>
-              <Col md={6} className={ video.cinemaWorldPrice > video.filmWorldPrice ? styles.hightPrice : ""  }>{video.filmWorldPrice}$</Col>
+              <Col md={6} className={ video.cinemaWorldPrice > video.filmWorldPrice ? styles.hightPrice : ""  }>${video.filmWorldPrice}</Col>
             </Row>
           </Card.Text>
         </Card.Body>

@@ -34,21 +34,22 @@ TOTAL WORK: 7.5 hours
    cd front-end
    npm install
    ```
+5. Create .env file in backend
 
-5. Run front-end
+6. Add environment value key-value pairs for VIDEOS API in .env: API_KEY=xxxxxx
+
+7. Run front-end
     ```
    npm run start
     ```
 
-6. From browser, access:
+8. From browser, access:
    ```
    localhost:3000
     ```
 
 ## APPLICATION SETUP FOR DEPLOYMENT
-Repeat from Step1 to Step4 on APPLICATION SETUP session.
-
-5. Create .env file in backend
+Repeat from Step1 to Step5 on APPLICATION SETUP session.
 
 6. Add environment value key-value pairs in .env: NODE_ENV=production
 
