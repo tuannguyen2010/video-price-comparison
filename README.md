@@ -11,8 +11,8 @@ In real project, it is more safety if we use Redis or any database use for cache
 1. Understand requirement, come up with solution: 2 hours
 2. Implement back end: 2 hours
 3. Implement front end: 1.5 hours
-
-TOTAL WORK: 5.5 hours
+4. Add unit test: 2 hour
+TOTAL WORK: 7.5 hours
 
 ## APPLICATION SETUP
 
@@ -65,11 +65,11 @@ Repeat from Step1 to Step4 on APPLICATION SETUP session.
     npm run start
     ```
 
-9.  At the browser, access:
+9. At the browser, access:
  
-   ```
+    ```
    localhost:8080
-    ``` 
+    ```
 
 ## TEST
 
@@ -77,14 +77,14 @@ Coverage more than 80% video controller
 
 1. Run test
 
-```
-   cd back-end
-   npm run test
-```
+    ```
+    cd back-end
+    npm run test
+    ```
 
 2. Run test with coverage report
 
-```
-   cd back-end
-   npm run test:coverage
-```
+    ```
+    cd back-end
+    npm run test:coverage
+    ```
