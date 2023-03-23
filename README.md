@@ -57,12 +57,34 @@ Repeat from Step1 to Step4 on APPLICATION SETUP session.
    cd front-end
    npm run build: production
     ``` 
+
 8. In the back-end, run server
+
     ```
     cd back-end
     npm run start
-    ``` 
-9. At the browser, access:
+    ```
+
+9.  At the browser, access:
+ 
    ```
    localhost:8080
-    ```    
+    ``` 
+
+## TEST
+
+Coverage more than 80% video controller
+
+1. Run test
+
+```
+   cd back-end
+   npm run test
+```
+
+2. Run test with coverage report
+
+```
+   cd back-end
+   npm run test:coverage
+```

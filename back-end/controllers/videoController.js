@@ -1,6 +1,6 @@
 const axios = require("axios");
 const NodeCache = require("node-cache");
-
+const { Service } = require("../services/videosService");
 const axiosInstance = axios.create({
   baseURL: "https://challenge.lexicondigital.com.au/api/v2/",
   timeout: 10000,
@@ -32,22 +32,11 @@ exports.getVideoList = async (req, res) => {
       (cinemaVideoListTTL && cinemaVideoListTTL < currentTimeStamp)
     ) {
       //If Expired or not exist, request two 3rd party API
-      await axiosInstance
-        .get(CINEMAWORLD_API)
-        .then(async function (response) {
-          // handle success
-          const data = response.data.Movies;
-          myCache.set(CINEMAWORLD_VIDEO_LIST_KEY, data, 100);
-          cinemaVideoList = data;
-        })
-        .catch(function (error) {
-          // handle error
-          console.log(error);
-          return null;
-        })
-        .finally(function () {
-          // always executed
-        });
+      const result = await Service.list(CINEMAWORLD_API).catch(() => {});
+      if(result) {
+        myCache.set(CINEMAWORLD_VIDEO_LIST_KEY, result, 100);
+        cinemaVideoList = result;
+      }
     }
 
     //GET FILM WORLD VIDEO LIST
@@ -58,22 +47,11 @@ exports.getVideoList = async (req, res) => {
       (filmWorldVideoListTTL && filmWorldVideoListTTL < currentTimeStamp)
     ) {
       //Expired or not exist
-      await axiosInstance
-        .get(FILMWORLD__API)
-        .then(async function (response) {
-          // handle success
-          const data = response.data.Movies;
-          myCache.set(FILMWORLD_VIDEO_LIST_KEY, data, 100);
-          filmWorldVideoList = data;
-        })
-        .catch(function (error) {
-          // handle error
-          console.log(error);
-          return null;
-        })
-        .finally(function () {
-          // always executed
-        });
+      const result = await Service.list(FILMWORLD__API).catch(() => {});
+      if(result) {
+        myCache.set(FILMWORLD_VIDEO_LIST_KEY, result, 100);
+        filmWorldVideoList = result;
+      }
     }
 
     //If not have any data, returl empty []
